@@ -70,9 +70,7 @@ from starfish import display
 
 viewer = display(imgs)
 viewer.layers[0].name = "raw stack" # rename the layer
-
-from napari.utils.notebook_display import nbscreenshot
-nbscreenshot(viewer)
+viewer
 
 ####################################################################################################
 # **View codebook**
@@ -260,9 +258,8 @@ spots.count_total_spots()
 # and segmented cells (:py:class:`.BinaryMaskCollection`) as layers in napari to verify the
 # results.
 #
-# .. code-block:: python
-#
-#   display(stack=registered_imgs, spots=decoded, masks=masks, viewer=viewer)
+
+display(stack=registered_imgs, spots=decoded, masks=masks, viewer=viewer)
 
 ####################################################################################################
 # **View decoded spots as a table**
